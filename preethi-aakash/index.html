@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preethi × Aakash — Our Little Universe</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffd6e8;--bg2:#d9c8ff;--bg3:#c8f1ff;--ink:#4a2650;--card:rgba(255,255,255,.72);--pink:#ff5c9d;--purple:#8b5cf6;--gold:#ffb703;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1040;--bg2:#1b1450;--bg3:#0d2a4a;--ink:#ffe9f5;--card:rgba(255,255,255,.1);color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#2a1040;--bg2:#1b1450;--bg3:#0d2a4a;--ink:#ffe9f5;--card:rgba(255,255,255,.1);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Quicksand',system-ui,sans-serif;font-weight:500;color:var(--ink);background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3),var(--bg1));background-size:300% 300%;animation:bg 18s ease infinite;overflow-x:hidden;min-height:100vh}
+@keyframes bg{50%{background-position:100% 100%}}
+h1,h2{font-family:'Pacifico',cursive;font-weight:400;margin:0}
+section{max-width:960px;margin:0 auto;padding:56px 20px;text-align:center;position:relative;z-index:2}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);background:linear-gradient(90deg,var(--pink),var(--purple),#00b4d8);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+.sub{opacity:.8;margin:0 0 28px}
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.fl{position:absolute;bottom:-40px;animation:rise linear forwards;will-change:transform}
+@keyframes rise{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+.tw{position:absolute;animation:tw 2.5s ease-in-out infinite}
+@keyframes tw{50%{opacity:.2;transform:scale(.5)}}
+.top{position:fixed;right:12px;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:20;border:0;background:var(--card);backdrop-filter:blur(8px);border-radius:99px;padding:8px 12px;cursor:pointer;font-size:1.1rem}
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero h1{font-size:clamp(2.6rem,10vw,5.5rem);line-height:1.1;background:linear-gradient(90deg,#ff5c9d,#ffb703,#8b5cf6,#00b4d8,#ff5c9d);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.x{display:inline-block;animation:beat 1.2s infinite;color:var(--pink);-webkit-text-fill-color:var(--pink)}
+@keyframes beat{15%{transform:scale(1.4)}30%{transform:scale(1)}45%{transform:scale(1.25)}}
+.chars{display:flex;gap:6px;align-items:flex-end;justify-content:center;margin:10px 0}
+.chars svg{width:min(42vw,200px);height:auto;overflow:visible;cursor:pointer;filter:drop-shadow(0 10px 14px rgba(120,40,120,.25))}
+.bob{animation:bob 2.4s ease-in-out infinite}
+.bob.b{animation-delay:-1.2s}
+@keyframes bob{50%{transform:translateY(-14px) rotate(2deg)}}
+.blink{animation:blink 4s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.speech{background:var(--card);backdrop-filter:blur(8px);border-radius:20px;padding:10px 18px;min-height:44px;font-weight:700;margin-top:6px;transition:transform .2s}
+.speech.pop{transform:scale(1.12)}
+.btn{border:0;cursor:pointer;font:inherit;font-weight:700;color:#fff;padding:14px 26px;border-radius:99px;background:linear-gradient(90deg,var(--pink),var(--purple));box-shadow:0 8px 20px rgba(255,92,157,.4);transition:transform .15s}
+.btn:hover{transform:translateY(-3px) scale(1.05)}.btn:active{transform:scale(.95)}
+/* counter */
+.count{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.box{background:var(--card);backdrop-filter:blur(8px);border-radius:22px;padding:16px 18px;min-width:84px;box-shadow:0 6px 18px rgba(139,92,246,.18)}
+.box b{display:block;font-size:2rem;color:var(--pink)}
+.date{margin-top:18px}.date input{font:inherit;padding:8px 12px;border-radius:12px;border:2px solid var(--purple);background:var(--card);color:var(--ink)}
+/* memories */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.mem{background:var(--card);backdrop-filter:blur(8px);border-radius:26px;padding:22px 16px;transition:transform .3s;box-shadow:0 8px 22px rgba(255,92,157,.18)}
+.mem:nth-child(odd){transform:rotate(-2deg)}.mem:nth-child(even){transform:rotate(2deg)}
+.mem:hover{transform:rotate(0) scale(1.06) translateY(-6px)}
+.mem .em{font-size:3rem;display:block;animation:bob 3s ease-in-out infinite}
+.mem h3{margin:8px 0 4px;color:var(--purple)}.mem p{margin:0;font-size:.95rem}
+/* game */
+#arena{position:relative;height:320px;border-radius:28px;background:var(--card);backdrop-filter:blur(8px);overflow:hidden;touch-action:manipulation;box-shadow:inset 0 0 0 3px rgba(255,92,157,.35)}
+.h{position:absolute;top:-50px;font-size:2.4rem;cursor:pointer;user-select:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(400px) rotate(30deg)}}
+.pop{animation:none!important;transform:scale(2);opacity:0;transition:.25s}
+.score{font-weight:700;font-size:1.2rem;margin-bottom:10px}
+/* surprise */
+.note{background:var(--card);backdrop-filter:blur(8px);border-radius:26px;padding:24px;margin:20px auto;max-width:560px;font-size:1.15rem;min-height:90px;display:flex;align-items:center;justify-content:center}
+.note.in{animation:in .6s}
+@keyframes in{from{transform:scale(.6) rotate(-6deg);opacity:0}}
+.letter{max-width:600px;margin:0 auto;background:var(--card);backdrop-filter:blur(8px);border-radius:26px;padding:28px;line-height:1.7;text-align:left}
+.letter b{font-family:'Pacifico',cursive;color:var(--pink);font-weight:400;font-size:1.3rem}
+footer{padding:40px 20px 60px;text-align:center;position:relative;z-index:2;font-family:'Pacifico',cursive;font-size:1.3rem}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div id="sky"></div>
+<button class="top" id="theme" aria-label="Toggle theme">🌙</button>
+
+<section class="hero">
+  <div style="font-size:1.1rem;opacity:.85">✨ welcome to our little universe ✨</div>
+  <h1>Preethi <span class="x">♥</span> Aakash</h1>
+  <div class="chars">
+    <!-- Preethi -->
+    <svg viewBox="0 0 200 230" class="bob" id="cP" aria-label="Cute Preethi">
+      <ellipse cx="100" cy="215" rx="55" ry="8" fill="#000" opacity=".12"/>
+      <circle cx="52" cy="48" r="20" fill="#d98b5f"/><circle cx="148" cy="48" r="20" fill="#d98b5f"/>
+      <circle cx="52" cy="48" r="10" fill="#ffb3c7"/><circle cx="148" cy="48" r="10" fill="#ffb3c7"/>
+      <ellipse cx="100" cy="160" rx="58" ry="52" fill="#ff8fb8"/>
+      <circle cx="100" cy="95" r="62" fill="#f2a679"/>
+      <ellipse cx="100" cy="112" rx="26" ry="20" fill="#ffe0c8"/>
+      <g class="blink"><circle cx="76" cy="90" r="9" fill="#3b1f4a"/><circle cx="124" cy="90" r="9" fill="#3b1f4a"/></g>
+      <circle cx="79" cy="87" r="3" fill="#fff"/><circle cx="127" cy="87" r="3" fill="#fff"/>
+      <ellipse cx="62" cy="108" rx="10" ry="6" fill="#ff7aa8" opacity=".7"/><ellipse cx="138" cy="108" rx="10" ry="6" fill="#ff7aa8" opacity=".7"/>
+      <ellipse cx="100" cy="104" rx="7" ry="5" fill="#3b1f4a"/>
+      <path d="M90 116 Q100 126 110 116" stroke="#3b1f4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <g transform="translate(100 40)"><path d="M0 0 L-28 -16 L-28 16Z M0 0 L28 -16 L28 16Z" fill="#ff3d81"/><circle r="8" fill="#ffd166"/></g>
+      <path d="M100 185 c-14-12-24-20-24-30 a12 12 0 0 1 24-4 a12 12 0 0 1 24 4 c0 10-10 18-24 30z" fill="#fff" opacity=".9"/>
+    </svg>
+    <!-- Aakash -->
+    <svg viewBox="0 0 200 230" class="bob b" id="cA" aria-label="Cute Aakash">
+      <ellipse cx="100" cy="215" rx="55" ry="8" fill="#000" opacity=".12"/>
+      <circle cx="52" cy="50" r="20" fill="#7a5a48"/><circle cx="148" cy="50" r="20" fill="#7a5a48"/>
+      <circle cx="52" cy="50" r="10" fill="#c9a28b"/><circle cx="148" cy="50" r="10" fill="#c9a28b"/>
+      <ellipse cx="100" cy="160" rx="58" ry="52" fill="#5bc0eb"/>
+      <circle cx="100" cy="95" r="62" fill="#9a7360"/>
+      <ellipse cx="100" cy="112" rx="26" ry="20" fill="#e8c9b3"/>
+      <g class="blink"><circle cx="76" cy="90" r="9" fill="#1d1a2e"/><circle cx="124" cy="90" r="9" fill="#1d1a2e"/></g>
+      <circle cx="79" cy="87" r="3" fill="#fff"/><circle cx="127" cy="87" r="3" fill="#fff"/>
+      <ellipse cx="62" cy="108" rx="10" ry="6" fill="#ff7aa8" opacity=".6"/><ellipse cx="138" cy="108" rx="10" ry="6" fill="#ff7aa8" opacity=".6"/>
+      <ellipse cx="100" cy="104" rx="7" ry="5" fill="#1d1a2e"/>
+      <path d="M88 115 Q100 128 112 115" stroke="#1d1a2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M50 62 Q100 8 150 62 Q100 38 50 62Z" fill="#3a2a5e"/>
+      <rect x="64" y="84" width="30" height="22" rx="8" fill="none" stroke="#ffb703" stroke-width="3" opacity="0"/>
+      <path d="M100 190 l6 12 14 2-10 9 3 14-13-7-13 7 3-14-10-9 14-2z" fill="#ffd166" transform="translate(0 -14) scale(.8) translate(25 12)"/>
+    </svg>
+  </div>
+  <div class="speech" id="say">Tap us! 💕</div>
+  <p style="margin:22px 0 0"><button class="btn" onclick="document.getElementById('count').scrollIntoView()">Enter our universe ↓</button></p>
+</section>
+
+<section id="count">
+  <h2>Our Love Clock</h2>
+  <p class="sub">Every second with you is my favourite second 💞</p>
+  <div class="count"><div class="box"><b id="d">0</b>days</div><div class="box"><b id="h">0</b>hours</div><div class="box"><b id="m">0</b>mins</div><div class="box"><b id="s">0</b>secs</div></div>
+  <p class="date">Our special day: <input type="date" id="dt"></p>
+</section>
+
+<section>
+  <h2>Our Memories</h2>
+  <p class="sub">Little moments that became big happiness ✨</p>
+  <div class="grid">
+    <div class="mem"><span class="em">💋</span><h3>Our First Kiss</h3><p>One tiny moment that my heart will never forget.</p></div>
+    <div class="mem"><span class="em">🛵</span><h3>Our First Ride</h3><p>Wind in our hair and my arms around you.</p></div>
+    <div class="mem"><span class="em">🌴</span><h3>Chennai Meeting</h3><p>Our city, our story, and so many happy hours together.</p></div>
+    <div class="mem"><span class="em">🌃</span><h3>Night Rides</h3><p>Empty roads, city lights, and you by my side.</p></div>
+    <div class="mem"><span class="em">🏡</span><h3>Home Meetings</h3><p>Cosy moments together where I feel most at home.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Catch My Hearts</h2>
+  <p class="sub">Pop 15 hearts, Aakash, they’re all yours 💘</p>
+  <div class="score">Hearts: <span id="sc">0</span> / 15</div>
+  <div id="arena"></div>
+  <p><button class="btn" id="go">Start game 🎮</button></p>
+</section>
+
+<section>
+  <h2>Surprise Box</h2>
+  <p class="sub">Tap for a little love note 🎁</p>
+  <div class="note" id="note">🎀 Tap the button, Aakash! 🎀</div>
+  <button class="btn" id="sur">Open a surprise 💌</button>
+</section>
+
+<section>
+  <h2>A Letter For You</h2>
+  <div class="letter">
+    <b>Dear Aakash,</b><br>
+    You are my calm, my laughter, my favourite person. Thank you for every smile, every hug and every little moment. I made this tiny universe just for you, so you remember how loved you are. 🌍💖<br><br>
+    <b>Forever yours, Preethi 🎀</b>
+  </div>
+</section>
+
+<footer>Made with 💗 by Preethi, for Aakash</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const sky=$('sky');
+// twinkling stars
+for(let i=0;i<40;i++){const s=document.createElement('div');s.className='tw';s.textContent=pick(['✦','✧','⋆','★']);s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;font-size:${8+Math.random()*14}px;color:${pick(['#ffd166','#fff','#ff9ec7','#a5d8ff'])};animation-delay:${Math.random()*3}s`;sky.appendChild(s)}
+// floating hearts
+function float(){const f=document.createElement('div');f.className='fl';f.textContent=pick(['💖','💕','💗','🌸','🦋','⭐','🎀','💜','🧸']);f.style.left=Math.random()*100+'%';f.style.fontSize=14+Math.random()*26+'px';f.style.animationDuration=7+Math.random()*7+'s';sky.appendChild(f);setTimeout(()=>f.remove(),15000)}
+setInterval(float,700);for(let i=0;i<8;i++)setTimeout(float,i*150);
+// cursor sparkle trail
+let last=0;addEventListener('pointermove',e=>{const n=Date.now();if(n-last<70)return;last=n;burst(e.clientX,e.clientY,1,'💗')});
+function burst(x,y,n,em){for(let i=0;i<n;i++){const p=document.createElement('div');p.textContent=em||pick(['💖','✨','🌸','💕','⭐']);p.style.cssText=`position:fixed;left:${x}px;top:${y}px;z-index:50;pointer-events:none;font-size:${14+Math.random()*10}px;transition:all .9s ease-out`;document.body.appendChild(p);requestAnimationFrame(()=>{p.style.transform=`translate(${(Math.random()-.5)*180}px,${-40-Math.random()*140}px) rotate(${Math.random()*90}deg)`;p.style.opacity=0});setTimeout(()=>p.remove(),950)}}
+// characters talk
+const say=$('say');
+const lines={cP:['Hi Aakash! 💕','I love you the most! 🥰','You make me smile! 😊','Hug me! 🤗'],cA:['Hi Preethi! 💙','You’re my favourite! ✨','Best girl ever! 🌸','Come here, cutie! 🥺']};
+['cP','cA'].forEach(id=>$(id).addEventListener('click',e=>{say.textContent=pick(lines[id]);say.classList.add('pop');setTimeout(()=>say.classList.remove('pop'),200);burst(e.clientX,e.clientY,10)}));
+// counter
+let start='2024-01-01';try{start=localStorage.getItem('pa-date')||start}catch(e){}
+$('dt').value=start;$('dt').onchange=e=>{start=e.target.value;try{localStorage.setItem('pa-date',start)}catch(x){}};
+setInterval(()=>{let t=Math.max(0,Date.now()-new Date(start+'T00:00:00'));$('d').textContent=Math.floor(t/864e5);$('h').textContent=Math.floor(t/36e5)%24;$('m').textContent=Math.floor(t/6e4)%60;$('s').textContent=Math.floor(t/1e3)%60},1000);
+// game
+let score=0,timer=null;const ar=$('arena');
+$('go').onclick=()=>{clearInterval(timer);ar.innerHTML='';score=0;$('sc').textContent=0;
+ timer=setInterval(()=>{const h=document.createElement('div');h.className='h';h.textContent=pick(['💖','💗','💕','💘','🧸']);h.style.left=Math.random()*(ar.clientWidth-50)+'px';h.style.animationDuration=2+Math.random()*2+'s';
+  const hit=e=>{e.stopPropagation();if(h.classList.contains('pop'))return;h.classList.add('pop');score++;$('sc').textContent=score;burst(e.clientX,e.clientY,4);setTimeout(()=>h.remove(),250);
+   if(score>=15){clearInterval(timer);ar.innerHTML='<div style="padding-top:110px;font-family:Pacifico;font-size:1.8rem;color:var(--pink)">You caught all my heart, Aakash! 💞</div>';for(let i=0;i<6;i++)setTimeout(()=>burst(innerWidth*Math.random(),innerHeight*.5,8),i*200)}};
+  h.addEventListener('pointerdown',hit);ar.appendChild(h);setTimeout(()=>h.remove(),4200)},650)};
+// surprises
+const notes=['You’re my favourite person in the whole universe 🌍','Your smile is my happy place 😊','I choose you today, tomorrow and always 💍','You + Me = my best story 📖','Thank you for being you, Aakash 🧸','You make ordinary days magical ✨','Sending you a million hugs 🤗','Aakash, you are my home 🏡'];
+$('sur').onclick=e=>{const n=$('note');n.classList.remove('in');void n.offsetWidth;n.textContent=pick(notes);n.classList.add('in');burst(e.clientX,e.clientY,16)};
+// theme
+const root=document.documentElement;$('theme').onclick=()=>{const dark=getComputedStyle(root).colorScheme==='dark';root.dataset.theme=dark?'light':'dark';$('theme').textContent=dark?'🌙':'☀️'};
+</script>
+</body>
+</html>
